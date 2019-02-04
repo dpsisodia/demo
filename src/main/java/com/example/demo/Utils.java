@@ -44,13 +44,10 @@ public class Utils {
 	}
 	
 	public static File unzip(String source){
-	    String destination = LocalDate.now().toString();
 	    String destPath = "/tmp/"+destination;
 		try {
-			destination = File.createTempFile(destination, ".csv").getAbsolutePath();
 			ZipFile zipFile = new ZipFile(source);
-			
-	        zipFile.extractAll(destPath);
+	        	zipFile.extractAll(destPath);
 	    } catch (ZipException | IOException e) {
 	        e.printStackTrace();
 	    }
