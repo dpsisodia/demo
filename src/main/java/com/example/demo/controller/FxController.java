@@ -63,7 +63,7 @@ public class FxController {
 		LOG.debug("in getFxRates");
 		File csvFile = cache.readFxRates(LocalDate.now().toString());
 		Map<String, String> map = Utils.convert(csvFile).get(0);
-		if(map.get(symbol) == null)
+		if(map.get(symbol.toUpperCase()) == null)
 			return ResponseEntity.badRequest().body("No rate found for SYMBOL " + symbol);
 		return ResponseEntity.ok(map.get(symbol));
 	}
