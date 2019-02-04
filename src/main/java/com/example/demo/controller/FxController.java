@@ -27,7 +27,7 @@ import com.example.demo.service.CacheEnabledServices;
 public class FxController {
 	private static final Logger LOG = LoggerFactory.getLogger(FxController.class);
 	
-	public final static String PATH_BASE = "/c";//currencies
+	public final static String PATH_BASE = "/currencies";
 	
 	@Autowired
 	private CacheEnabledServices cache;
