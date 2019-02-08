@@ -25,7 +25,7 @@ public class DemoApplication {
 	CacheManager cacheManager;
 	 
 	// every night 12'o clock
-	@Scheduled(cron = "*/10 * * * * ?")
+	@Scheduled(cron = "0 0 0 * * ?")
 	@CacheEvict(value = { CACHE_NAME })
 	public void clearCache() {      
 		cacheManager.getCache(CACHE_NAME).clear();
