@@ -14,8 +14,7 @@ import com.example.demo.Utils;
 @Service
 public class CacheEnabledServicesImpl implements CacheEnabledServices {
 	private static final Logger log = LoggerFactory.getLogger(CacheEnabledServicesImpl.class);
-	private static final String CACHE_NAME = "fxRates";
-	
+		
 	@Override
 	@Cacheable(value = CACHE_NAME, key = "#date")
 	public File readFxRates(String date) {
