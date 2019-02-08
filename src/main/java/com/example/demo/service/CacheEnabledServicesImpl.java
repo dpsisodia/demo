@@ -16,13 +16,6 @@ public class CacheEnabledServicesImpl implements CacheEnabledServices {
 	private static final Logger log = LoggerFactory.getLogger(CacheEnabledServicesImpl.class);
 	private static final String CACHE_NAME = "fxRates";
 	
-	// every night 12'o clock
-	@Scheduled(cron = "0 0 0 * * ?")
-	@CacheEvict(value = { CACHE_NAME })
-	public void clearCache() {      
-		log.debug("clearing cache {}", CACHE_NAME );
-	}
-	
 	@Override
 	@Cacheable(value = CACHE_NAME, key = "#date")
 	public File readFxRates(String date) {
